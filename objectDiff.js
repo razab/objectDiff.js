@@ -215,9 +215,13 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
 	 * @return {string}
 	 */
 	function stringifyObjectKey(key) {
-		return /^[a-z0-9_$]*$/i.test(key) ?
-			key :
-			JSON.stringify(key);
+		try{
+			return /^[a-z0-9_$]*$/i.test(key) ?
+				key :
+				JSON.stringify(key);
+		}catch(e){
+			console.log(e)
+		}
 	}
 
 	/**
