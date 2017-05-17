@@ -220,7 +220,7 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
 				key :
 				JSON.stringify(key);
 		}catch(e){
-			console.log(e)
+			console.dir(e)
 		}
 	}
 
