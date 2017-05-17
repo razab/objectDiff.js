@@ -20,10 +20,10 @@ objectDiff.diff = function diff(a, b) {
 	for (var key in a) {
 		if (key in b) {
 			if (a[key] === b[key]) {
-				value[key] = {
-					changed: 'equal',
-					value: a[key]
-				}
+				// value[key] = {
+				// 	changed: 'equal',
+				// 	value: a[key]
+				// }
 			} else {
 				var typeA = typeof a[key];
 				var typeB = typeof b[key];
