@@ -20,10 +20,10 @@ objectDiff.diff = function diff(a, b) {
 	for (var key in a) {
 		if (key in b) {
 			if (a[key] === b[key]) {
-				// value[key] = {
-				// 	changed: 'equal',
-				// 	value: a[key]
-				// }
+				value[key] = {
+					changed: 'equal',
+					value: a[key]
+				}
 			} else {
 				var typeA = typeof a[key];
 				var typeB = typeof b[key];
@@ -215,13 +215,9 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
 	 * @return {string}
 	 */
 	function stringifyObjectKey(key) {
-		try{
-			return /^[a-z0-9_$]*$/i.test(key) ?
-				key :
-				JSON.stringify(key);
-		}catch(e){
-			console.dir(e)
-		}
+		return /^[a-z0-9_$]*$/i.test(key) ?
+			key :
+			JSON.stringify(key);
 	}
 
 	/**
